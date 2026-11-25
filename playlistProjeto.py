@@ -26,6 +26,7 @@ while(exitConfirm == 0):
                 else:
                     print(f"Música {cadastroMusicas} já existe na Playlist.")
 
+                
                 musicConfirm = input("Deseja continuar adicionando músicas? S/N: ").upper()
 #talvex verificar se a pessoa colocar algo diferente de S ou N...
         case 2:
