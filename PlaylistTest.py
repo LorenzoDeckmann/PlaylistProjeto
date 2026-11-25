@@ -21,7 +21,10 @@ while(exitConfirm == 0):
                     print(f"Música {cadastroMusicas} já existe na Playlist.")
 
                 musicConfirm = input("Deseja continuar adicionando músicas? S/N: ").upper()
-#talvex verificar se a pessoa colocar algo diferente de S ou N...
+                while (musicConfirm != "S" and musicConfirm != "N"):
+                    print("Resposta inválida! Digite apenas S ou N.")
+                    musicConfirm = "N"
+                   
         case 2:
             print(f"Verificando musicas em{nomePlaylist}...")
             if( len(playlist) == 0 ):
@@ -37,7 +40,20 @@ while(exitConfirm == 0):
                 print(f"Musica {searchMusic} está em {nomePlaylist}.")
 
         case 4:
-            next
+             print(f"A playlist {nomePlaylist} tem {len(playlist)} música(s).")
+        case 5:
+             if (len(playlist) == 0):
+                print(f"A playlist {nomePlaylist} não tem músicas para remover.")
+             else:
+                removeMusic = input("Digite a música que deseja remover: ")
+                if (removeMusic in playlist):
+                    playlist.remove(removeMusic)
+                    print(f"Música {removeMusic} removida de {nomePlaylist}.")
+                else:
+                    print(f"Música {removeMusic} não encontrada em {nomePlaylist}.")
+        case 0:
+            exitConfirm = 1
+            print("Saindo...")
 
         case _:
             print("Nenhuma opção das mostradas encontradas!")
